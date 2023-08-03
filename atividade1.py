@@ -1,15 +1,29 @@
-LIMITE_SAQUE_DIA = 3
-LIMITE_SAQUE_VALOR = 500
-i=0
+
 contador =0
 extrato =0
 menu ="""
+[u] Criar usuário
+[cc] Criar conta corrente
 [s] saque
 [d] Depositar
 [e] Extrato
 [q] Sair
 """
-
+def deposito(v1,extrato):
+    v1=float(input("Qual o valor de deposito:"))
+    extrato += v1
+    
+def saque(v2,extrato):
+    v2=float(input("qual o valor o saque:"))
+    i=0
+    if v2 <500:
+        extrato -= v2
+        i+=1
+    elif i<3:
+        print("limite de saques diários ultrapassados")
+    else:
+        print("valor acima do permitido")
+    
 while True:
     opcao = input(menu)
     if opcao == "d":
@@ -38,7 +52,15 @@ while True:
             contador+=1
         else:
             print("Limite de saques diários permitidos")   
-        
+       
+    elif opcao=="cc":
+        contaCorrente=list(input("Digite o nº de conta corrente desejado:"))
+        break
+           
+    elif opcao=="u":
+        nome=list(input("Qual o seu nome:"))
+        break
+           
     elif opcao == "q":
         print("Sistema finalizado com sucesso")
         break

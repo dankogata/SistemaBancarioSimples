@@ -1,6 +1,7 @@
 
 contador =0
 extrato =0
+i=0
 menu ="""
 [u] Criar usuário
 [cc] Criar conta corrente
@@ -44,7 +45,7 @@ while True:
     
     elif opcao == "s":
         saque= float(input("Qual o valor do saque: "))
-        if saque>LIMITE_SAQUE_VALOR:
+        if saque>500:
             print("Valor acima do permitido")
         elif i<3:
             extrato -= saque

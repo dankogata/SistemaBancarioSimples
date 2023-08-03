@@ -29,7 +29,7 @@ def saque(v2,extrato):
  
  
 #TODOs
-#CRIAR FUNÇÃO DE CRIAR USUÁRIOS E CONTA CORRENTE    
+#CRIAR FUNÇÃO DE CRIAR USUÁRIOS E CONTA CORRENTE + refatorar   
 while True:
     opcao = input(menu)
     if opcao == "d":

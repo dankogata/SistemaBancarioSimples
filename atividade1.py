@@ -10,6 +10,8 @@ menu ="""
 [e] Extrato
 [q] Sair
 """
+
+
 def deposito(v1,extrato):
     v1=float(input("Qual o valor de deposito:"))
     extrato += v1
@@ -24,7 +26,10 @@ def saque(v2,extrato):
         print("limite de saques diários ultrapassados")
     else:
         print("valor acima do permitido")
-    
+ 
+ 
+#TODOs
+#CRIAR FUNÇÃO DE CRIAR USUÁRIOS E CONTA CORRENTE + REFATORAR    
 while True:
     opcao = input(menu)
     if opcao == "d":

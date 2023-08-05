@@ -1,12 +1,11 @@
-#TODOs
-#CRIAR FUNÇÃO DE CRIAR USUÁRIOS E CONTA CORRENTE + refatorar   
-
 contador =0
 extrato =0
 i=0
 menu ="""
 [u] Criar usuário
 [cc] Criar conta corrente
+[scc] Mostrar contas correntes
+[su] Mostrar usuários
 [s] saque
 [d] Depositar
 [e] Extrato
@@ -38,21 +37,30 @@ while True:
         if saque>500:
             print("Valor acima do permitido")
         elif i<3:
-            extrato -= saque
-            i+=1
-            contador+=1
+            if extrato>0:
+                extrato -= saque
+                i+=1
+                contador+=1
+            else:
+                print("Saque não permitido")
         else:
             print("Limite de saques diários permitidos")   
        
     elif opcao=="cc":
         contaCorrente=input("Digite o nº de conta corrente desejado:")
         listaContas.append(contaCorrente)
-        print(listaContas)
+
            
     elif opcao=="u":
         nome=input("Qual o seu nome:")
         listaNomes.append(nome)
+
+    elif opcao=="su":
         print(listaNomes)
+        
+    elif opcao=="scc":
+        print (listaContas)
+
            
     elif opcao == "q":
         print("----------Sistema finalizado com sucesso----------")

@@ -1,3 +1,5 @@
+#TODOs
+#CRIAR FUNÇÃO DE CRIAR USUÁRIOS E CONTA CORRENTE + refatorar   
 
 contador =0
 extrato =0
@@ -10,26 +12,9 @@ menu ="""
 [e] Extrato
 [q] Sair
 """
+listaContas=[]
+listaNomes=[]
 
-
-def deposito(v1,extrato):
-    v1=float(input("Qual o valor de deposito:"))
-    extrato += v1
-    
-def saque(v2,extrato):
-    v2=float(input("qual o valor o saque:"))
-    i=0
-    if v2 <500:
-        extrato -= v2
-        i+=1
-    elif i<3:
-        print("limite de saques diários ultrapassados")
-    else:
-        print("valor acima do permitido")
- 
- 
-#TODOs
-#CRIAR FUNÇÃO DE CRIAR USUÁRIOS E CONTA CORRENTE + refatorar   
 while True:
     opcao = input(menu)
     if opcao == "d":
@@ -60,13 +45,15 @@ while True:
             print("Limite de saques diários permitidos")   
        
     elif opcao=="cc":
-        contaCorrente=list(input("Digite o nº de conta corrente desejado:"))
-        break
+        contaCorrente=input("Digite o nº de conta corrente desejado:")
+        listaContas.append(contaCorrente)
+        print(listaContas)
            
     elif opcao=="u":
-        nome=list(input("Qual o seu nome:"))
-        break
+        nome=input("Qual o seu nome:")
+        listaNomes.append(nome)
+        print(listaNomes)
            
     elif opcao == "q":
-        print("Sistema finalizado com sucesso")
+        print("----------Sistema finalizado com sucesso----------")
         break
